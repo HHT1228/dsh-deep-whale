@@ -14,7 +14,8 @@ body:
       options:
         - orca-link（虎鲸链路）
         - maid-atelier（深海女仆工坊）
-        - 两套都要 / 脚手架层面
+        - fat-fish-link（肥鱼LINK）
+        - 多套都要 / 脚手架层面
     validations:
       required: true
   - type: textarea

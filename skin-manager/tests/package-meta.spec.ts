@@ -3,14 +3,14 @@
  * running it: `locale/<lang>.json#meta.{title,description}` through the
  * package's `./locale/*.json` export, and `package.json#icon` as a relative
  * SVG/PNG/JPEG/WebP of at most 256 KiB inside the package. These specs pin
- * that contract for all three packages this repository ships.
+ * that contract for all four packages this repository ships.
  */
 import { existsSync, readFileSync, statSync } from 'node:fs'
 import { extname, join, resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
 
 const repo = resolve(__dirname, '../..')
-const packages = ['skin-manager', 'maid-atelier', 'orca-link'] as const
+const packages = ['skin-manager', 'maid-atelier', 'orca-link', 'fat-fish-link'] as const
 
 function read(path: string): Record<string, any> {
   return JSON.parse(readFileSync(path, 'utf8')) as Record<string, any>

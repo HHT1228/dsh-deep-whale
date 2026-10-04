@@ -29,6 +29,7 @@ body:
       options:
         - orca-link（虎鲸链路）
         - maid-atelier（深海女仆工坊）
+        - fat-fish-link（肥鱼LINK）
         - 不确定 / 其他
     validations:
       required: true

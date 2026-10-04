@@ -12,6 +12,9 @@ Nhấp vào ảnh để xem kích thước đầy đủ.
 |---|---|---|
 | maid-atelier | [![maid-atelier chế độ sáng](maid-atelier/preview/light.webp)](maid-atelier/preview/light.webp) | [![maid-atelier chế độ tối](maid-atelier/preview/dark.webp)](maid-atelier/preview/dark.webp) |
 | orca-link | [![orca-link chế độ sáng](orca-link/preview/light.png)](orca-link/preview/light.png) | [![orca-link chế độ tối](orca-link/preview/dark.png)](orca-link/preview/dark.png) |
+| fat-fish-link | [![fat-fish-link chế độ sáng](fat-fish-link/preview/light.png)](fat-fish-link/preview/light.png) | [![fat-fish-link chế độ tối](fat-fish-link/preview/dark.png)](fat-fish-link/preview/dark.png) |
+
+<!-- preview: ảnh tạm, sẽ chụp lại sau khi khởi động lại giao diện -->
 
 ## Các thành phần
 
@@ -19,13 +22,14 @@ Nhấp vào ảnh để xem kích thước đầy đủ.
 |---|---|---|---|
 | [maid-atelier](maid-atelier/) | `@smalltailqwq/dsh-client-ui-skin-maid-atelier` | Xưởng hầu biển sâu: hai cô hầu gái cá voi, ren xanh biển sâu và thanh bên chibi biến DSH thành xưởng hầu gái | MIT (code) / CC BY-NC-SA 4.0 (artwork) |
 | [orca-link](orca-link/) | `@smalltailqwq/dsh-client-ui-skin-orca-link` | ORCA LINK: cô bé điều hành cá voi đen cực ngầu, giao diện toàn góc vuông cùng biểu tượng vẽ lại bằng nét thẳng; chế độ sáng thực dụng, chế độ tối dịu mắt | MIT (code) / CC BY-NC-SA 4.0 (artwork) |
+| [fat-fish-link](fat-fish-link/) | `@smalltailqwq/dsh-client-ui-skin-fat-fish-link` | CHUBBY FISH LINK: phiên bản cá béo xanh của giao diện thực dụng — nền sáng trắng ấm với điểm nhấn xanh biển sâu, toàn góc vuông, biểu tượng của DSH được vẽ lại bằng nét thẳng khi chạy, thanh bên lấp đầy cả cột; hai bộ cảnh 16:9 (khoang máy trắng ở chế độ sáng / phòng đọc ban đêm ở chế độ tối), mỗi bộ có trạng thái chờ và trạng thái làm việc. Phần vỏ và tương tác kế thừa từ [orca-link](orca-link/) | MIT (code) / CC BY-NC-SA 4.0 (artwork) |
 | [skin-manager](skin-manager/) | `@smalltailqwq/dsh-client-ui-skin-deep-whale-manager` | Trình quản lý giao diện: chuyển giữa các giao diện đã cài và điều chỉnh tùy chọn riêng của từng giao diện, trong «Cài đặt → Quản lý giao diện» | MIT |
 
 ## Chủ sở hữu bản quyền
 
 | Chủ sở hữu | Nội dung sở hữu | Giao diện tương ứng | Trang cá nhân |
 |---|---|---|---|
-| 上善 (Shangshan) | Thiết kế nhân vật whale-girl gốc | maid-atelier / orca-link | [Pixiv](https://www.pixiv.net/users/62155430) · [Bilibili（上善无形）](https://b23.tv/8h5L4xz) |
+| 上善 (Shangshan) | Thiết kế nhân vật whale-girl gốc | maid-atelier / orca-link / fat-fish-link | [Pixiv](https://www.pixiv.net/users/62155430) · [Bilibili（上善无形）](https://b23.tv/8h5L4xz) |
 | ZipZipPipe | Thiết kế lại whale-girl hầu gái với yếu tố DeepSeek | maid-atelier | [Pixiv](https://www.pixiv.net/users/18604994) · [Bilibili（ZipZipPipe）](https://b23.tv/Pnw6nG8) |
 
 \*Vui lòng báo cáo vấn đề qua GitHub issue thay vì liên hệ trực tiếp với hai nghệ sĩ trên. Tuy nhiên, bạn vẫn có thể theo dõi các tác phẩm whale-girl của họ, cảm ơn!
@@ -49,32 +53,32 @@ Nếu không chắc, hãy chọn npm. Chỉ cần sao chép lệnh phù hợp v�
 
 ```sh
 # Linux / macOS / WSL
-dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-deep-whale-manager' && dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-maid-atelier' && dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-orca-link'
+dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-deep-whale-manager' && dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-maid-atelier' && dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-orca-link' && dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-fat-fish-link'
 ```
 
 ```powershell
 # PowerShell
-dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-deep-whale-manager'; dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-maid-atelier'; dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-orca-link'
+dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-deep-whale-manager'; dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-maid-atelier'; dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-orca-link'; dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-fat-fish-link'
 ```
 
 **Cài từ GitHub**
 
 ```sh
 # Linux / macOS / WSL
-dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/skin-manager' && dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/maid-atelier' && dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/orca-link'
+dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/skin-manager' && dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/maid-atelier' && dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/orca-link' && dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/fat-fish-link'
 ```
 
 ```powershell
 # PowerShell
-dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/skin-manager'; dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/maid-atelier'; dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/orca-link'
+dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/skin-manager'; dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/maid-atelier'; dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/orca-link'; dsh plugin --profile web add 'github:Small-tailqwq/dsh-deep-whale#path:/fat-fish-link'
 ```
 
 Hai nguồn dùng cùng tên package, nên nguồn cài sau sẽ thay thế nguồn cài trước. Muốn đổi nguồn, chỉ cần chạy bộ lệnh còn lại.
 
 Sau đó **khởi động lại DSH một lần**, mở «Cài đặt → Quản lý giao diện» và nhấn «Chuyển» trên giao diện bạn muốn. Từ đó trở đi, đổi giao diện có hiệu lực ngay, không cần khởi động lại.
 
-- Chỉ muốn một giao diện? Bỏ phần `add` của giao diện còn lại khỏi lệnh. Nên giữ trình quản lý vì việc chuyển đổi cần đến nó.
-- Nếu cài cả hai giao diện, sau lần khởi động lại đầu tiên DSH vẫn trông như mặc định chính thức. Đó là bình thường: hai giao diện chạy cùng lúc sẽ xung đột, nên trình quản lý tắt cả hai để bạn tự chọn.
+- Chỉ muốn một giao diện? Bỏ phần `add` của các giao diện còn lại khỏi lệnh. Nên giữ trình quản lý vì việc chuyển đổi cần đến nó.
+- Nếu cài nhiều hơn một giao diện, sau lần khởi động lại đầu tiên DSH vẫn trông như mặc định chính thức. Đó là bình thường: nhiều giao diện chạy cùng lúc sẽ xung đột, nên trình quản lý tắt tất cả để bạn tự chọn.
 - Không muốn gõ lệnh? Gửi câu sau cho bất kỳ trợ lý AI nào (hoặc chính DSH), nó sẽ cài theo [INSTALL.md](INSTALL.md):
 
   ```
@@ -85,12 +89,12 @@ Sau đó **khởi động lại DSH một lần**, mở «Cài đặt → Quản
 
 ```sh
 # Linux / macOS / WSL
-dsh plugin --profile web update @smalltailqwq/dsh-client-ui-skin-deep-whale-manager @smalltailqwq/dsh-client-ui-skin-maid-atelier @smalltailqwq/dsh-client-ui-skin-orca-link
+dsh plugin --profile web update @smalltailqwq/dsh-client-ui-skin-deep-whale-manager @smalltailqwq/dsh-client-ui-skin-maid-atelier @smalltailqwq/dsh-client-ui-skin-orca-link @smalltailqwq/dsh-client-ui-skin-fat-fish-link
 ```
 
 ```powershell
 # PowerShell
-dsh plugin --profile web update '@smalltailqwq/dsh-client-ui-skin-deep-whale-manager' '@smalltailqwq/dsh-client-ui-skin-maid-atelier' '@smalltailqwq/dsh-client-ui-skin-orca-link'
+dsh plugin --profile web update '@smalltailqwq/dsh-client-ui-skin-deep-whale-manager' '@smalltailqwq/dsh-client-ui-skin-maid-atelier' '@smalltailqwq/dsh-client-ui-skin-orca-link' '@smalltailqwq/dsh-client-ui-skin-fat-fish-link'
 ```
 
 Lệnh này dùng được cho cả hai nguồn: nguồn npm sẽ lên bản phát hành mới nhất, nguồn GitHub sẽ kéo code mới nhất trên `main`. Cập nhật xong chỉ cần tải lại trang, không cần khởi động lại DSH. Nếu profile này chỉ có các giao diện của kho, có thể chạy `dsh plugin --profile web update` để cập nhật tất cả.
@@ -122,7 +126,7 @@ dsh plugin --profile web allow-version @smalltailqwq/dsh-client-ui-skin-orca-lin
 
 **Giao diện bị rối: mất nút cài đặt, thanh bên sai độ rộng, trang trí chồng lên nhau**
 
-Thường là do hai giao diện đang chạy cùng lúc. Mở «Cài đặt → Quản lý giao diện», nhấn «Mặc định chính thức» hoặc một giao diện bất kỳ rồi tải lại trang. Nếu không mở được Cài đặt, hãy mở mục [Cơ chế loại trừ giao diện](#mutual-exclusion) bên dưới để sửa thủ công.
+Thường là do nhiều giao diện đang chạy cùng lúc. Mở «Cài đặt → Quản lý giao diện», nhấn «Mặc định chính thức» hoặc một giao diện bất kỳ rồi tải lại trang. Nếu không mở được Cài đặt, hãy mở mục [Cơ chế loại trừ giao diện](#mutual-exclusion) bên dưới để sửa thủ công.
 
 **Đã cài nhưng trang không thay đổi**
 
@@ -160,9 +164,10 @@ node <đường dẫn tuyệt đối tới bản clone>/.agents/skills/dsh-skin-
 dsh plugin --profile web add <đường dẫn tuyệt đối tới bản clone>/skin-manager
 dsh plugin --profile web add <đường dẫn tuyệt đối tới bản clone>/maid-atelier
 dsh plugin --profile web add <đường dẫn tuyệt đối tới bản clone>/orca-link
+dsh plugin --profile web add <đường dẫn tuyệt đối tới bản clone>/fat-fish-link
 ```
 
-- Dòng `node` là tùy chọn. Nó chọn sẵn giao diện mặc định để lần khởi động đầu đã hiển thị giao diện đó; `--target` nhận `maid-atelier`, `orca-link` hoặc `official`. Bỏ qua thì lần đầu sẽ là giao diện chính thức, sau đó chuyển trong Quản lý giao diện.
+- Dòng `node` là tùy chọn. Nó chọn sẵn giao diện mặc định để lần khởi động đầu đã hiển thị giao diện đó; `--target` nhận `maid-atelier`, `orca-link`, `fat-fish-link` hoặc `official`. Bỏ qua thì lần đầu sẽ là giao diện chính thức, sau đó chuyển trong Quản lý giao diện.
 - Nên dùng **đường dẫn tuyệt đối**. Trên Windows dùng dấu gạch chéo nào cũng được, ví dụ `C:/Users/<bạn>/code/dsh-deep-whale/maid-atelier`.
 - Đừng chỉ ghi tên thư mục: `dsh plugin --profile web add maid-atelier` sẽ bị hiểu là tên package npm và báo lỗi 404. Đường dẫn tương đối phải bắt đầu bằng `./` hoặc `../` và được tính từ **thư mục nơi bạn chạy lệnh dsh**, không phải thư mục kho giao diện. Đường dẫn sai sẽ không báo lỗi, chỉ là giao diện không được tải.
 - Thư mục cục bộ cài cùng tên package với nguồn npm và GitHub; lần `add` cuối cùng sẽ được dùng.
@@ -174,19 +179,21 @@ dsh plugin --profile web add <đường dẫn tuyệt đối tới bản clone>/
 
 Mỗi lúc chỉ bật được một giao diện. Trình quản lý không phải là giao diện và cần luôn được bật.
 
-Công tắc bật/tắt của mỗi giao diện nằm trong hai tệp cấu hình: `~/.dsh/profiles/web/cordis.patch.yml` (lớp profile) và `~/.dsh/cordis.patch.yml` (lớp home, được ưu tiên hơn). Giao diện chưa có mục trong các tệp này mặc định là **bật**, nên cài cả hai mà chưa từng chuyển đổi thì chúng sẽ chạy cùng lúc và làm rối giao diện.
+Công tắc bật/tắt của mỗi giao diện nằm trong hai tệp cấu hình: `~/.dsh/profiles/web/cordis.patch.yml` (lớp profile) và `~/.dsh/cordis.patch.yml` (lớp home, được ưu tiên hơn). Giao diện chưa có mục trong các tệp này mặc định là **bật**, nên cài nhiều giao diện mà chưa từng chuyển đổi thì chúng sẽ chạy cùng lúc và làm rối giao diện.
 
 Trình quản lý sẽ xử lý việc này:
 
 - Mỗi lần khởi động, nếu có từ hai giao diện trở lên đang bật, nó tắt tất cả và trở về mặc định chính thức. Nếu bạn đã chọn một giao diện thì giữ nguyên.
 - Khi chuyển trong «Cài đặt → Quản lý giao diện», nó ghi công tắc vào cả hai tệp và áp dụng ngay.
 
-Nếu không dùng được trình quản lý, hãy sửa tệp thủ công. Thêm nội dung sau vào **cả hai** tệp; đặt giao diện muốn dùng là `false`, giao diện còn lại là `true`:
+Nếu không dùng được trình quản lý, hãy sửa tệp thủ công. Thêm nội dung sau vào **cả hai** tệp; đặt giao diện muốn dùng là `false`, các giao diện còn lại là `true`:
 
 ```yaml
 - id: ui-skin-maid-atelier
   disabled: false
 - id: ui-skin-orca-link
+  disabled: true
+- id: ui-skin-fat-fish-link
   disabled: true
 - id: ui-skin-deep-whale-manager
   disabled: false
@@ -202,11 +209,11 @@ Thiết lập riêng của từng giao diện (ví dụ khung giờ của «ch�
 <summary><b>Kiểm tra cài đặt</b></summary>
 
 ```sh
-dsh plugin --profile web list          # phải thấy ba package @smalltailqwq/dsh-client-ui-skin-*
-dsh --profile web --dump-config        # trình quản lý là disabled: false; đúng một trong hai giao diện là false
+dsh plugin --profile web list          # phải thấy ba giao diện cùng trình quản lý, tổng cộng bốn package @smalltailqwq/dsh-client-ui-skin-*
+dsh --profile web --dump-config        # trình quản lý là disabled: false; đúng một trong ba giao diện là false
 ```
 
-Ngay sau khi cài và trước khi khởi động lại, cả hai giao diện có thể hiển thị là đang bật. Điều đó bình thường; trình quản lý sẽ xử lý khi khởi động lại.
+Ngay sau khi cài và trước khi khởi động lại, nhiều giao diện có thể hiển thị là đang bật. Điều đó bình thường; trình quản lý sẽ xử lý khi khởi động lại.
 
 Sau khi khởi động lại, bạn có thể chạy dòng sau trong console trình duyệt để xác nhận trang đã thực sự tải script giao diện:
 
@@ -225,7 +232,7 @@ Kết quả phải có trình quản lý và giao diện đang bật; giao diệ
 |---|---|---|
 | `ERR_PNPM_FETCH_404` | Sai tên package, không có mạng, hoặc chỉ ghi tên thư mục khi cài cục bộ | Sao chép tên package từ trang này; cài cục bộ thì dùng đường dẫn tuyệt đối |
 | `The matching commit...` / không phân giải được ref | pnpm cũ hơn 9 không hỗ trợ `#path:` | Nâng cấp pnpm: `npm i -g pnpm@latest` |
-| `ERR_PNPM_EXOTIC_SUBDEP` | Cài một package tổng hợp kéo thêm Git dependency (quy tắc an toàn của pnpm 11; kho này không có package như vậy) | Cài riêng ba package bằng lệnh trên trang này |
+| `ERR_PNPM_EXOTIC_SUBDEP` | Cài một package tổng hợp kéo thêm Git dependency (quy tắc an toàn của pnpm 11; kho này không có package như vậy) | Cài riêng bốn package (trình quản lý cùng ba giao diện) bằng lệnh trên trang này |
 | `pnpm not found on PATH` | Chưa cài pnpm | `npm i -g pnpm` rồi thử lại |
 | Đã cài nhưng trang không thay đổi | Giao diện đang tắt, hoặc trình duyệt chưa tải lại | Bật nó trong Quản lý giao diện rồi tải lại trang |
 | Lệnh PowerShell bị cắt hoặc lỗi | Tên package không có dấu nháy, phần sau `#` bị coi là chú thích | Luôn bọc tên package trong dấu nháy đơn |
@@ -253,6 +260,6 @@ Các PR sau xung đột với implementation upstream hiện có nên chưa đư
 
 ## Giấy phép
 
-Code thuộc dự án được cấp phép theo **MIT**; xem [LICENSE](LICENSE) for scope. Bản quyền artwork và các quyền hiện có vẫn thuộc về tác giả gốc. Toàn bộ artwork trong cả hai giao diện, bao gồm ảnh do AI tạo và AI hỗ trợ, vẫn thuộc CC BY-NC-SA 4.0; **cấm sử dụng thương mại**; xem `NOTICE` và `LICENSE-ARTWORK` của mỗi giao diện. Ảnh nhúng trong source, CSS, hoặc bundle sinh ra vẫn nằm ngoài phạm vi MIT. Tài liệu bên thứ ba giữ giấy phép áp dụng; các quyền đã cấp cho phiên bản trước không bị thu hồi.
+Code thuộc dự án được cấp phép theo **MIT**; xem [LICENSE](LICENSE) for scope. Bản quyền artwork và các quyền hiện có vẫn thuộc về tác giả gốc. Toàn bộ artwork trong cả ba giao diện, bao gồm ảnh do AI tạo và AI hỗ trợ, vẫn thuộc CC BY-NC-SA 4.0; **cấm sử dụng thương mại**; xem `NOTICE` và `LICENSE-ARTWORK` của mỗi giao diện. Ảnh nhúng trong source, CSS, hoặc bundle sinh ra vẫn nằm ngoài phạm vi MIT. Tài liệu bên thứ ba giữ giấy phép áp dụng; các quyền đã cấp cho phiên bản trước không bị thu hồi.
 
 Khung sườn giao diện bắt nguồn từ [zhu1090093659/dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui); kho này chỉ phân phối giao diện hoàn chỉnh, không bao gồm khung sườn.

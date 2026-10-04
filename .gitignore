@@ -3,8 +3,21 @@ node_modules/
 *.js.map
 .DS_Store
 
+# 本地 pnpm 安装留下的解析记录;仓库以 npm 的 package-lock.json 为准,不入库
+pnpm-lock.yaml
+
+# 皮肤测试用的一次性安装目录(内部只有 node_modules 时 git 本就不会跟踪,这里兜住散落文件)
+orca-link-test/
+fat-fish-link-test/
+
+# 新皮肤素材的本地暂存目录:不参与构建(prepare-skin-assets.mjs 只读 src/client 与 assets/runtime),不入库
+new_skin_resources/
+
 # 皮肤开发笔记:权威副本在 dsh-skin-template(本目录为 junction 共享,不入库)
 .agents/notes/
+
+# note 维护器的本地草稿区(中央不可写或冲突时的落点),不入库
+.agents/bridge-state/
 
 # 本地技能测试环境:隔离 DSH_HOME 与测试 profile,含复制的本机配置,绝不可入库
 .test-env/

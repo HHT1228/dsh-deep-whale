@@ -16,10 +16,10 @@
 与皮肤一起，从 npm 安装稳定版：
 
 ```sh
-dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-deep-whale-manager' && dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-maid-atelier' && dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-orca-link'
+dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-deep-whale-manager' && dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-maid-atelier' && dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-orca-link' && dsh plugin --profile web add '@smalltailqwq/dsh-client-ui-skin-fat-fish-link'
 ```
 
-PowerShell 版本见仓库 README。未指定 dist-tag 时 npm 使用 `latest`。首次安装后重启一次 DSH；首次重启时管理器兜底检测到两套及以上皮肤同时启用会原子回退官方默认，之后在“设置 → 皮肤管理”切换。本地开发时对 skin-manager 与皮肤目录分别以绝对路径 link，不要与 npm 安装混跑（同一包名，后 add 覆盖）。
+PowerShell 版本见仓库 README。未指定 dist-tag 时 npm 使用 `latest`。首次安装后重启一次 DSH（上面这条命令会装上管理器与三套皮肤，共四个包）；首次重启时管理器兜底检测到两套及以上皮肤同时启用会原子回退官方默认，之后在“设置 → 皮肤管理”切换。本地开发时对 skin-manager 与皮肤目录分别以绝对路径 link，不要与 npm 安装混跑（同一包名，后 add 覆盖）。
 
 切换与启动兜底都会同步改写当前 Web profile 与优先级更高的 home patch 中的标准 `dsh-skin managed` 区段；区段外的用户 YAML 保持不变。区段只拥有已发现皮肤与 `ui-skin-*` 的行：DSH 0.1.7+ 把设置（如 `ui-theme`）追加到 patch 末尾而落进区段时，这些非皮肤行在重建时会原样移到区段之前。已有零套或一套皮肤启用时，启动兜底不写文件。自定义配置按 `skinId` 保存在浏览器 `localStorage`，不会修改模型请求或 DSH 服务。
 

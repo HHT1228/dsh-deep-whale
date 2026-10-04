@@ -1,0 +1,124 @@
+import {
+  exposeSkinCustomization,
+  SKIN_CUSTOMIZATION_PROTOCOL,
+  SkinAttributeProjector,
+  type SkinCustomizationState,
+} from '../../../skin-manager/src/protocol.ts'
+
+export const COMPOSER_SCROLL_HIDE_ATTRIBUTE = 'data-dsh-whale-fatfish-composer-scroll-hide'
+export const COMPOSER_BOTTOM_ONLY_ATTRIBUTE = 'data-dsh-whale-fatfish-composer-bottom-only'
+export const COMPOSER_HANDLES_ATTRIBUTE = 'data-dsh-whale-fatfish-composer-handles'
+export const HEADLINE_TYPEWRITER_ATTRIBUTE = 'data-dsh-whale-fatfish-headline-typewriter'
+
+/** A declared behaviour switch reads as enabled until the manager says 'off'. */
+export function fatfishFeatureEnabled(doc: Document, attribute: string): boolean {
+  return doc.documentElement.getAttribute(attribute) !== 'off'
+}
+
+/** Re-run `callback` whenever the manager flips one of the given switches. */
+export function observeFatFishFeature(doc: Document, attributes: string[], callback: () => void): () => void {
+  const observer = new MutationObserver(callback)
+  observer.observe(doc.documentElement, { attributes: true, attributeFilter: attributes })
+  return () => { observer.disconnect() }
+}
+
+/** CHUBBY FISH LINK owns the attributes produced from its declared controls. */
+export function installFatFishCustomization(root: HTMLElement = document.documentElement): () => void {
+  const projector = new SkinAttributeProjector(root)
+  const apply = (state: SkinCustomizationState | null): void => {
+    if (state === null) {
+      projector.release()
+      return
+    }
+    const scheduleVisible = state.visibility.sfwMode !== false
+    projector.set('data-dsh-whale-fatfish-background', state.values.background === true ? 'visible' : 'hidden')
+    projector.set('data-dsh-whale-fatfish-pricing', state.values.pricingLight === true ? 'visible' : 'hidden')
+    projector.set('data-dsh-whale-fatfish-art', scheduleVisible ? 'visible' : 'hidden')
+    projector.set(
+      'data-dsh-whale-fatfish-settings-layout',
+      state.values.centerSettings === true ? 'centered' : 'docked',
+    )
+    projector.set(COMPOSER_SCROLL_HIDE_ATTRIBUTE, state.values.scrollHideComposer === false ? 'off' : 'on')
+    // 与其它声明相反：这个开关默认关闭，所以缺省值不是 'on'。
+    projector.set(COMPOSER_BOTTOM_ONLY_ATTRIBUTE, state.values.composerBottomOnly === true ? 'on' : 'off')
+    projector.set(COMPOSER_HANDLES_ATTRIBUTE, state.values.composerHandles === false ? 'off' : 'on')
+    projector.set(HEADLINE_TYPEWRITER_ATTRIBUTE, state.values.headlineTypewriter === false ? 'off' : 'on')
+  }
+
+  return exposeSkinCustomization({
+    protocol: SKIN_CUSTOMIZATION_PROTOCOL,
+    skinId: 'fat-fish-link',
+    title: 'CHUBBY FISH LINK',
+    settings: [
+      {
+        key: 'background',
+        type: 'boolean',
+        label: '显示背景',
+        labelEn: 'Show the background',
+        defaultValue: true,
+      },
+      {
+        key: 'pricingLight',
+        type: 'boolean',
+        label: '显示红绿灯定价指示',
+        labelEn: 'Show the pricing traffic light',
+        defaultValue: true,
+      },
+      {
+        key: 'centerSettings',
+        type: 'boolean',
+        label: '设置界面居中',
+        labelEn: 'Center the settings panel',
+        description: '在宽阔视口中将设置面板放在屏幕中央；窄视口仍使用全屏布局。',
+        descriptionEn: 'Place the settings panel in the center on large viewports; constrained viewports remain full-screen.',
+        defaultValue: false,
+      },
+      {
+        key: 'scrollHideComposer',
+        type: 'boolean',
+        label: '上滚时隐藏输入框',
+        labelEn: 'Hide the composer while scrolling up',
+        description: '向上翻阅对话时收起输入框，向下滚动或回到底部时再显示。',
+        descriptionEn: 'Tuck the composer away while reading back through the conversation; it returns when scrolling down or reaching the bottom.',
+        defaultValue: true,
+      },
+      {
+        key: 'composerBottomOnly',
+        type: 'boolean',
+        label: '输入框只在底部显示',
+        labelEn: 'Show the composer only at the conversation bottom',
+        description: '只在滚到最新消息末尾时显示输入框，向上回看时它自然隐去、回到底部再显现。开启后接管上面的上滚隐藏。',
+        descriptionEn: 'Show the composer only while the conversation sits at its newest message; it fades away while reading back and returns at the bottom. Takes over the scroll-up hiding above.',
+        defaultValue: false,
+      },
+      {
+        key: 'composerHandles',
+        type: 'boolean',
+        label: '输入框拖拽收起手柄',
+        labelEn: 'Composer drag-to-hide handles',
+        description: '在输入框两侧的括号上显示拖拽手柄，向内拖动即可手动收起输入框。',
+        descriptionEn: 'Turn the brackets beside the composer into handles that hide it when dragged inward.',
+        defaultValue: true,
+      },
+      {
+        key: 'headlineTypewriter',
+        type: 'boolean',
+        label: '首页标题打字机动画',
+        labelEn: 'Home headline typewriter',
+        description: '在新会话首页轮播打字机标语；关闭后保留宿主原始标题。',
+        descriptionEn: 'Cycle typewriter slogans on the new-session headline; when off, the host headline stays as is.',
+        defaultValue: true,
+      },
+      {
+        key: 'sfwMode',
+        type: 'visibility-schedule',
+        label: '不那么二次元模式',
+        labelEn: 'Not-so-anime mode',
+        description: '按本机时间控制场景背景的显示与隐藏。',
+        descriptionEn: 'Control the scene background by local time.',
+        defaultValue: { enabled: false, outside: 'visible', ranges: [] },
+      },
+    ],
+    apply,
+  })
+}

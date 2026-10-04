@@ -1,0 +1,30 @@
+{
+  "id": "fat-fish-link",
+  "name": "肥鱼LINK",
+  "nameEn": "CHUBBY FISH LINK",
+  "author": "Small-tailqwq",
+  "tagline": "蓝色大肥鱼 · 亮色机能 · 暗色治愈",
+  "taglineEn": "A blue big-fish operator · functional light · soothing dark",
+  "description": "蓝色大肥鱼版的机能界面：暖白亮色配深海蓝点缀、全直角、直线重绘图标，侧栏整列铺满。",
+  "tags": [
+    "whale",
+    "fish",
+    "mechanical",
+    "blue",
+    "anime"
+  ],
+  "accent": "#086cff",
+  "bodyAttr": "data-dsh-fat-fish-link",
+  "dshCompatibility": "0.2.0rc2",
+  "package": "@smalltailqwq/dsh-client-ui-skin-fat-fish-link",
+  "wiring": {
+    "id": "ui-skin-fat-fish-link",
+    "bundleWired": false
+  },
+  "preview": {
+    "light": "preview/light.png",
+    "dark": "preview/dark.png"
+  },
+  "desktopIcon": "assets/icons/fat-fish-link.ico",
+  "order": 15
+}
